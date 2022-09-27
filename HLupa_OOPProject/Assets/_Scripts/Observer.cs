@@ -11,5 +11,8 @@ public enum NotificationType
 {
     GreenCubeCollected,
     RedCubeCollected,
-    OrangeCubeCollected
+    OrangeCubeCollected,
+    GreenCubeDropped,
+    RedCubeDropped,
+    OrangeCubeDropped
 } 

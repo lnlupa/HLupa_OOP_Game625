@@ -16,4 +16,17 @@ public class RedCubeObs : SubjectObserved, Collectible
     {
         return "red_cube";
     }
+
+    private void Update()
+    {
+        DropItem();
+    }
+
+    public void DropItem()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Notify(this, NotificationType.RedCubeDropped);
+        }
+    }
 }

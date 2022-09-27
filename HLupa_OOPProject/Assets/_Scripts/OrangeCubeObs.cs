@@ -16,4 +16,17 @@ public class OrangeCubeObs : SubjectObserved, Collectible
     {
         return "orange_cube";
     }
+
+    private void Update()
+    {
+        DropItem();
+    }
+
+    public void DropItem()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Notify(this, NotificationType.OrangeCubeDropped);
+        }
+    }
 }

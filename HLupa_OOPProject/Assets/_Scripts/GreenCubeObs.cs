@@ -16,4 +16,17 @@ public class GreenCubeObs : SubjectObserved, Collectible
     {
         return "green_cube";
     }
+
+    private void Update()
+    {
+        DropItem();
+    }
+
+    public void DropItem() 
+    {
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            Notify(this, NotificationType.GreenCubeDropped);
+        }
+    }
 }

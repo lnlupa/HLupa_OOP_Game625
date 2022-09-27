@@ -5,5 +5,6 @@ using UnityEngine;
 public interface Collectible 
 {
     public string GetName();
+    public void DropItem();
 }
 

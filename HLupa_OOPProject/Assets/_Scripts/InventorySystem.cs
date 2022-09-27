@@ -14,24 +14,75 @@ public class InventorySystem : UIObserved, Observer
             inventoryGreen.Add(obj);
             string name = obj.GetName();
             Debug.Log(name);
-            Debug.Log(inventoryGreen.Count);
+            //Debug.Log(inventoryGreen.Count);
             UINotify(inventoryGreen, name);
         }
+
+        if (notificationType == NotificationType.GreenCubeDropped) 
+        {
+            if (inventoryGreen.Count <= 0)
+            {
+                print("green inventory empty!");
+            }
+            else 
+            {
+                inventoryGreen.Remove(obj);
+                string name = obj.GetName();
+                Debug.Log(name + " removed");
+                //Debug.Log(inventoryGreen.Count);
+                UINotify(inventoryGreen, name);
+            }
+        }
+
         if(notificationType == NotificationType.OrangeCubeCollected)
         {
             inventoryOrange.Add(obj);
             string name = obj.GetName();
             Debug.Log(name);
-            Debug.Log(inventoryOrange.Count);
+            //Debug.Log(inventoryOrange.Count);
             UINotify(inventoryOrange, name);
         }
-        if(notificationType == NotificationType.RedCubeCollected)
+
+
+        if (notificationType == NotificationType.OrangeCubeDropped)
+        {
+            if (inventoryOrange.Count <= 0)
+            {
+                print("orange inventory empty!");
+            }
+            else 
+            {
+                inventoryOrange.Remove(obj);
+                string name = obj.GetName();
+                Debug.Log(name + " removed");
+                //Debug.Log(inventoryOrange.Count);
+                UINotify(inventoryOrange, name);
+            }
+        }
+
+        if (notificationType == NotificationType.RedCubeCollected)
         {
             inventoryRed.Add(obj);
             string name = obj.GetName();
             Debug.Log(name);
-            Debug.Log(inventoryRed.Count);
+            //Debug.Log(inventoryRed.Count);
             UINotify(inventoryRed, name);
+        }
+
+        if (notificationType == NotificationType.RedCubeDropped)
+        {
+            if (inventoryRed.Count <= 0)
+            {
+                print("red inventory empty");
+            }
+            else 
+            {
+                inventoryRed.Remove(obj);
+                string name = obj.GetName();
+                Debug.Log(name + " removed");
+                //Debug.Log(inventoryRed.Count);
+                UINotify(inventoryRed, name);
+            }
         }
     }
 
